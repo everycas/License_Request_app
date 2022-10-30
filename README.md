@@ -1,13 +1,13 @@
 Lang: Python 3.9 / OS Win 10 
 
-Project name:
+# Licence key request application
 
-# Licence key request utility
-
-Goal: 
-
-Generate unique PC key for generate licence in Licence_Generator.
+Goal: Generate unique PC key for generating licence in 'LicGenerator' project.
 
 Structure:
+- rkey.pyw - main working functionality and gui.
 
-1. rkey.pyw - main working functionality / gui module.
+# Instruction
+
+1. Run application
+2. PC licence_request code will be generated, showed and copied to clipboard (to paste in LicGenerator)
