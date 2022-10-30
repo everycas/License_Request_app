@@ -1,13 +1,17 @@
-from tkinter import *
-from tkinter import messagebox
 import uuid
+from tkinter import *
 from random import randint
+from tkinter import messagebox
 import pyperclip
 
 COLOR = "#F5F5DC"
 
 
-def n(): return str(randint(1111, 999999))
+def n():
+    
+    """ Generate and return random number from defined range """
+    
+    return str(randint(1111, 999999))
 
 
 def uid_rnum():
@@ -17,24 +21,25 @@ def uid_rnum():
 
     # Get uid num string
     uid = str(uuid.getnode())
+    
     # Reverse uid
     num = uid[::-1]
-    # Make control_nums from uid
+    
+    # Pick control nums from uid
     x1 = num[:4]
     x2 = num[4:9]
     x3 = num[9:]
+    
     # Redy request code / rnum
-    rnum = f"{n()}-{x3}-{x1}-{n()}-{x2}-{n()}"
-    # result
-    return rnum
-
+    return f"{n()}-{x3}-{x1}-{n()}-{x2}-{n()}"
+    
 
 ##############################################
 # GUI / Интерфейс программы  -----------------
 ##############################################
 
 root = Tk()
-root.title("AlohaSh4 Lic Request")
+root.title('LicRequest v1.0')
 root.config(padx=5, pady=5)
 root.maxsize(width=400, height=250)
 root.resizable(False, False)
@@ -48,8 +53,5 @@ entry.config(state='readonly', readonlybackground=COLOR)
 entry.grid(column=1, row=0, padx=3, pady=3)
 
 pyperclip.copy(entry.get())
-messagebox.showinfo(title="Copy to clipboard", message='Request license number copied to clipboard. Now you can '
-                                                       'paste it to your license prolongation request letter.')
+messagebox.showinfo(title="Copy to clipboard", message='License request number copied to clipboard.')
 root.destroy()
-
-# root.mainloop()
